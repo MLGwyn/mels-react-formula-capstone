@@ -17,7 +17,7 @@ const SignUpPage = () => {
       type: "password",
     },
   ]}
-  submitButtonText="create an account"
+  // submitButtonText="create an account"
 />
   );
 };
