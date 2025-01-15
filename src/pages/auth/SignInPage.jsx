@@ -1,7 +1,7 @@
 import AuthForm from "./AuthForm";
 
 const SignInPage = () => {
-  return (
+  return ( <div className="flex justify-center items-center">
     <AuthForm
       fields={[
         {
@@ -13,8 +13,8 @@ const SignInPage = () => {
           type: "password",
         },
       ]}
-      // submitButtonText="sign in"
+      submitButtonLabel="sign in"
     />
-  );
+  </div>);
 };
 export default SignInPage;
