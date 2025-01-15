@@ -23,7 +23,7 @@ const AuthForm = ({ fields, submitButtonLabel }) => {
         }} 
         />
       ))}
-      <button className="bg-violet-900 text-violet-300 w-full mt-4 py-2 rounded-md">
+      <button className="bg-violet-300 text-violet-900 w-full mt-4 py-2 rounded-md">
         {submitButtonLabel}
       </button>
     </form>
