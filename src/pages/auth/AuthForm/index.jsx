@@ -13,7 +13,7 @@ const AuthForm = ({ fields, submitButtonLabel }) => {
   return (
     <form className="font-lato bg-white border border-slate-200 rounded-lg p-4 m-4">
       {fields.map((field) => (
-        <Field field={field}
+        <Field 
         key={field.label}
         label={field.label}
         value={values[field.label]}
