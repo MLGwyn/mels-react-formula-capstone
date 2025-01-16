@@ -7,7 +7,7 @@ const FormContainer = ({ children }) => {
           src="https://static-task-assets.react-formula.com/capstone_sign_in_scene.png"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/10"></div>
-        <div className="bg-emerald-300/20 absolute top-0 left-0 w-full h-full"></div>
+        <div className="bg-gradient-to-br from-violet-500/30 to-emerald-400/30 absolute top-0 left-0 w-full h-full"></div>
       </div>
 
       <div className="flex flex-col items-center justify-center h-screen bg-violet-200 flex-1">
