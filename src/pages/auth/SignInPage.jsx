@@ -2,53 +2,54 @@ import { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import FormContainer from "./FormContainer";
-import * as userService from "services/user";
+import RedirectToPlantsIfSignedIn from "shared-components/RedirectToPlantsIfSignedin";
 import SessionContext from "contexts/SessionContext";
+import * as userService from "services/user";
 
 const SignInPage = () => {
   const [error, setError] = useState("");
   const location = useLocation();
-  const sessionContext = useContext(SessionContext)
+  const sessionContext = useContext(SessionContext);
   return (
-    <FormContainer>
-      <div className="text-red-800 font-lato">{error}</div>
-      {location.state?.accountCreated && (
-        <div className="p-4 mb-6 border border-emerald-700 bg-emerald-200/60 rounded-lg text-emerald-800 font-lato">
-          Account created successfully. Please sign in.
-        </div>
-      )}
-      <AuthForm
-        fields={[
-          {
-            label: "username",
-            type: "text",
-          },
-          {
-            label: "password",
-            type: "password",
-          },
-        ]}
-        submitButtonLabel="sign in"
-        onSubmit={async (values) => {
-          const response = await userService.createSession({
-            username: values.username,
-            password: values.password,
-          });
-          const data = await response.json();
-            if (response.status === 201){
+    <RedirectToPlantsIfSignedIn>
+      <FormContainer>
+        <div className="text-red-800 font-lato">{error}</div>
+        {location.state?.accountCreated && (
+          <div className="p-4 mb-6 border border-emerald-700 bg-emerald-200/60 rounded-lg text-emerald-800 font-lato">
+            Account created successfully. Please sign in.
+          </div>
+        )}
+        <AuthForm
+          fields={[
+            {
+              label: "username",
+              type: "text",
+            },
+            {
+              label: "password",
+              type: "password",
+            },
+          ]}
+          submitButtonLabel="sign in"
+          onSubmit={async (values) => {
+            const response = await userService.createSession({
+              username: values.username,
+              password: values.password,
+            });
+            const data = await response.json();
+            if (response.status === 201) {
               sessionContext.signIn(data.capstone_session_token);
-              console.log(data)
-              console.log('sign in successful!')
-              setError('')
-            }else{
+              setError("");
+            } else {
               setError(data.error);
             }
-        }}
-      />
-      <Link to="/sign-up" className="text-sm text-emerald-800 underline">
-        create an account
-      </Link>
-    </FormContainer>
+          }}
+        />
+        <Link to="/sign-up" className="text-sm text-emerald-800 underline">
+          create an account
+        </Link>
+      </FormContainer>
+    </RedirectToPlantsIfSignedIn>
   );
 };
 export default SignInPage;
