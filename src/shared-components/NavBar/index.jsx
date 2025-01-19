@@ -17,7 +17,7 @@ const NavBar = () => {
         </div>
         <div className="flex items-center">
           <button
-            className="flex items-center text text-emerald-200"
+            className="flex items-center text text-violet-200"
             onClick={() => setUserMenuOpen(true)}
           >
             <i className="fa-solid fa-user mr-2 text-lg"></i>
