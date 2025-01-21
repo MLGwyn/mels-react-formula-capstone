@@ -1,27 +1,19 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { POT_COLORS, getRandoIdx } from "shared-components/util";
 import clsx from "clsx";
 
-const POT_COLORS = {
-  stone: "bg-stone-200",
-  slate: "bg-slate-300",
-  sky: "bg-sky-700",
-  black: "bg-gray-600",
-  white: "bg-gray-50",
-  amber: "bg-amber-600",
-};
-
-const getRandoIdx = (array) =>{
-  return Math.floor(Math.random() * array.length)
-}
 
 const PlantItem = ({ plant }) => {
   const [imageIdx, setImageIdx] = useState(()=>getRandoIdx(plant.images));
   return (
     <div className="mx-5 my-8">
+      <Link to={`/plants/${plant.id}`}>
       <img
         className="w-[280px] h-[320px] rounded-md"
         src={plant.images[imageIdx].src}
       />
+      </Link>
       <div className="px-2 my-3">
         <div className="flex justify-between">
           <div className="font-playfair text-xl text-emerald-800">
@@ -38,7 +30,7 @@ const PlantItem = ({ plant }) => {
               <div
                 key={idx}
                 className={clsx(
-                  "w-4 h-4 rounded-full m-[2px] border border-slate-300",
+                  "w-4 h-4 rounded-full m-[2px] border border-violet-400",
                   POT_COLORS[image.pot_color],
                   imageIdx === idx && "outline outline-1 outline-offset-2 outline-red-500" 
                 )}

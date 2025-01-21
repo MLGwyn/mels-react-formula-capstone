@@ -1,20 +1,21 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import SessionContext from "contexts/SessionContext";
 
 const NavBar = () => {
   const { username, signOut } = useContext(SessionContext);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   return (
-    <nav className="flex justify-center bg bg-gradient-to-br from-emerald-800/80 to-violet-400/70 font-lato"
+    <nav className="flex justify-center bg bg-gradient-to-br from-emerald-900/80 to-violet-400/70 font-lato"
          onMouseLeave={()=>setUserMenuOpen(false)}>
       <div className="flex items-center justify-between w-full max-w-5xl px-8 py-2 relative">
-        <div className="text-white font-playfair text-2xl flex flex-col items-center">
+        <Link to="/plants" className="text-white font-playfair text-2xl flex flex-col items-center">
           <img
             className="w-10"
             src="https://static-task-assets.react-formula.com/capstone_logo_light.png"
           />
-          Rica&#39;s Plants
-        </div>
+          Mel&#39;s Plants
+        </Link>
         <div className="flex items-center">
           <button
             className="flex items-center text text-violet-200"

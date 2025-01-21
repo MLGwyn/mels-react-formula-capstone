@@ -17,7 +17,7 @@ const FormContainer = ({ children }) => {
             src="https://static-task-assets.react-formula.com/capstone_logo_dark.png"
           />
           <div className="mb-2 text-emerald-800 text-4xl font-playfair">
-            Rica&#39;s Plants{" "}
+            Mel&#39;s Plants{" "}
           </div>
         </div>
         {children}

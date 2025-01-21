@@ -3,6 +3,7 @@ import NavBar from "shared-components/NavBar";
 import RedirectToSignInIfSignedOut from "shared-components/RedirectToSignInIfSignedOut";
 import PlantItem from "./PlantItem";
 import * as plantService from "services/plant";
+import LoadingSpinner from "shared-components/LoadingSpinner";
 
 const PlantListPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,12 +21,10 @@ const PlantListPage = () => {
   return (
     <RedirectToSignInIfSignedOut>
       <NavBar />
-      <div className="bg-violet-200 min-h-screen">
         {isLoading ? (
-          <div className="flex justify-center pt-80">
-            <i className="fa-duotone fa-solid fa-spinner animate-spin text-4xl text-emerald-700/90"></i>
-          </div>
+          <LoadingSpinner />
         ) : (
+          <div className="bg-violet-200 min-h-screen">
           <div className="flex justify-center py-24">
             <div className="w-full max-w-5xl">
               <div className="font-playfair text-4xl text-emerald-700 mb-6 px-4">
@@ -38,8 +37,8 @@ const PlantListPage = () => {
               </div>
             </div>
           </div>
-        )}
       </div>
+        )}
     </RedirectToSignInIfSignedOut>
   );
 };
