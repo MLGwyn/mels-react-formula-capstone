@@ -15,7 +15,7 @@ const PlantInfoSection = ({ plant }) => {
               <PlantHeading plant={plant} />
             </div>
             <img className="rounded-lg" src={plant.images[imageIdx].src} />
-            <div className="flex mt-4">
+            <div className="flex mt-8">
               
                 <BenefitBox
                   icon="far fa-check-circle"
@@ -35,7 +35,7 @@ const PlantInfoSection = ({ plant }) => {
             <div className="hidden md:block">
               <PlantHeading plant={plant} />
             </div>
-            <p className="mt-4 text-slate-700 leading-relaxed">
+            <p className="mt-8 text-slate-700 leading-relaxed">
               {plant.description}
             </p>
               <PlantPurchaseOptions plant={plant} imageIdx={imageIdx}setImageIdx={setImageIdx} />
