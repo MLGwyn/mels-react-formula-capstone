@@ -71,7 +71,7 @@ const CartModal = ({ setCartOpen }) => {
                   <div>{totalQuantity} items</div>
                   <div className="">subtotal  <span className="ml-2 text-lg text-emerald-900">${subtotal}</span></div>
                 </div>
-                <button className="flex justify-center items-center py-3 text-lg mb-4 bg-emerald-800/70 text-violet-200 rounded-full">checkout<i className="fa-solid fa-light fa-cart-circle-check text-2xl ml-1 text-violet-200"></i></button>
+                <button className="flex justify-center items-center py-3 text-lg mb-4 bg-emerald-800/70 text-violet-200 rounded-full" onClick={()=> alert(" YOU'VE BEEN FOOLED! This is not a real site silly!")}>checkout<i className="fa-solid fa-light fa-cart-circle-check text-2xl ml-1 text-violet-200"></i></button>
               </div>
             </>
           )}
