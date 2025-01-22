@@ -24,7 +24,7 @@ const PlantInfoSection = ({ plant }) => {
                 />
                 <div className="bg-slate-400 w-px"></div>
                 <BenefitBox
-                  icon="fa-duotone fa-regular fa-truck-fast"
+                  icon="fa-regular fa-truck-fast"
                   title="Free Shipping"
                   description="Get ground free shipping on orders of $50 or more"
                 />
