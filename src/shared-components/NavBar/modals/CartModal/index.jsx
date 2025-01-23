@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, useCallback } from "react";
+import{motion} from "framer-motion"
 import clsx from "clsx";
 import SessionContext from "contexts/SessionContext";
 import LoadingSpinner from "shared-components/LoadingSpinner";
@@ -34,7 +35,11 @@ const CartModal = () => {
 
   return (
     
-        <div className="bg-violet-200 w-full max-w-xl h-screen flex flex-col">
+        <motion.div 
+        initial={{translateX:"100%"}}
+        animate={{translateX:0}}
+        transition={{duration:0.5}}
+        className="bg-violet-200 w-full max-w-xl h-screen flex flex-col">
 
           <div className="bg bg-gradient-to-br from-emerald-900 to-violet-400 font-playfair text-3xl shadow-md text-violet-200 py-8 text-center">
             {username}&#39;s cart
@@ -78,7 +83,7 @@ const CartModal = () => {
               </div>
             </>
           )}
-        </div>
+        </motion.div>
 
   );
 };

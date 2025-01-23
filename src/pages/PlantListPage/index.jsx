@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {motion} from "framer-motion"
 import NavBar from "shared-components/NavBar";
 import RedirectToSignInIfSignedOut from "shared-components/RedirectToSignInIfSignedOut";
 import PlantItem from "./PlantItem";
@@ -31,8 +32,15 @@ const PlantListPage = () => {
                 Plants In Stock
               </div>
               <div className="flex flex-wrap justify-center">
-                {plants.map((plant) => (
-                  <PlantItem key={plant.id} plant={plant} />
+                {plants.map((plant, idx) => (
+                  <motion.div 
+                  initial={{opacity:0,translateY:"20px"}}
+                  whileInView={{opacity:1, translateY:0}}
+                  viewport={{once:true}}
+                  transition={{delay:(idx % 3)*0.2, duration:0.4}}
+                  key={plant.id}>
+                    <PlantItem plant={plant} />
+                  </motion.div>
                 ))}
               </div>
             </div>

@@ -76,7 +76,7 @@ const PlantPurchaseOptions = ({ plant, imageIdx, setImageIdx }) => {
           {isLoading ? (
             <i className="fa-regular fa-spinner-scale animate-spin mr-3 text-3xl"></i>
           ) : (
-            <i className="mr-3 text-3xl fa-light fa-solid fa-cart-plus"></i>
+            <i className="mr-3 text-3xl fa-duotone fa-solid fa-cart-plus"></i>
           )}
           add to cart
         </button>
